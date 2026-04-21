@@ -1,6 +1,6 @@
 # App
 
-Esta pasta concentra a futura camada desktop do projeto.
+Esta pasta concentra a camada desktop do projeto.
 
 Stack aprovada:
 - Python
@@ -16,5 +16,11 @@ Subpastas:
 - `frontend/`: componentes visuais, janelas e estado da interface
 - `bridge/`: ponte entre UI e backend atual
 
-Ponto de entrada planejado:
+Ponto de entrada:
 - `app/main.py`
+
+Execucao recomendada (a partir da raiz do repo):
+
+```bash
+python3 -m app.main
+```

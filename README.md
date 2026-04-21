@@ -25,12 +25,46 @@ Arquivos gerados:
 - documentos corporativos em `data/<ticker>/`
 - panorama macro padrao em `data/_shared/macro_panorama_atual.pdf`
 
-## Execucao
+## Execucao completa
 
-No WSL com o ambiente `mvp_agentes`:
+### 1. Preparar ambiente
+
+No WSL (ou Linux/macOS), com ambiente `mvp_agentes`:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Rodar coletor via terminal (CLI)
 
 ```bash
 python -m src.main BBAS3
+```
+
+### 3. Rodar app desktop (PySide6)
+
+A partir da raiz do projeto:
+
+```bash
+python3 -m app.main
+```
+
+Importante:
+- Rode da raiz para manter imports como `app.*`.
+- O app salva estado local em `data/_app/` (favoritos, cache de coleta, snapshots macro).
+
+### 4. Gerar executavel Windows (.exe)
+
+O `.exe` deve ser gerado com Python do Windows (nao via Python do WSL):
+
+```cmd
+cd /d "C:\Users\Vitor\Documents\seilalol\MVP - Analise Empresas" && py -m pip install -U pyinstaller && py -m PyInstaller --noconfirm --windowed --onedir --name AnaliseEmpresas --collect-all PySide6 app\main.py
+```
+
+Saida esperada:
+
+```text
+dist\AnaliseEmpresas\AnaliseEmpresas.exe
 ```
 
 ## Observacao
