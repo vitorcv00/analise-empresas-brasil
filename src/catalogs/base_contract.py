@@ -1,0 +1,88 @@
+"""Contrato fixo do coletor base por ticker."""
+
+from __future__ import annotations
+
+
+BASE_COLLECTION_CONTRACT = [
+    {
+        "item": "balanco_recente",
+        "categoria": "corporativo",
+        "prioridade": "alta",
+        "janela": "ultimo_disponivel",
+        "fontes_preferenciais": ["ri", "cvm"],
+        "formato_esperado": ["pdf", "html"],
+        "justificativa": "Sempre buscar o balanco ou material de resultados mais recente.",
+    },
+    {
+        "item": "ri_recente",
+        "categoria": "corporativo",
+        "prioridade": "alta",
+        "janela": "ultimo_disponivel",
+        "fontes_preferenciais": ["ri"],
+        "formato_esperado": ["pdf", "html"],
+        "justificativa": "Sempre buscar material recente de relacoes com investidores.",
+    },
+    {
+        "item": "fatos_relevantes_3m",
+        "categoria": "corporativo",
+        "prioridade": "alta",
+        "janela": "90_dias",
+        "fontes_preferenciais": ["ri", "cvm"],
+        "formato_esperado": ["pdf", "html"],
+        "justificativa": "Buscar fatos relevantes recentes para eventos corporativos.",
+    },
+    {
+        "item": "calendario_corporativo",
+        "categoria": "corporativo",
+        "prioridade": "media",
+        "janela": "proximos_eventos",
+        "fontes_preferenciais": ["ri"],
+        "formato_esperado": ["html", "pdf"],
+        "justificativa": "Trazer proximas datas corporativas conhecidas.",
+    },
+    {
+        "item": "selic_atual",
+        "categoria": "macro",
+        "prioridade": "alta",
+        "janela": "atual",
+        "fontes_preferenciais": ["bcb_sgs"],
+        "formato_esperado": ["json"],
+        "justificativa": "Trazer a Selic observada mais recente.",
+    },
+    {
+        "item": "selic_projecao",
+        "categoria": "macro",
+        "prioridade": "alta",
+        "janela": "ano_corrente",
+        "fontes_preferenciais": ["bcb_focus"],
+        "formato_esperado": ["json"],
+        "justificativa": "Trazer a projecao de mercado para a Selic.",
+    },
+    {
+        "item": "ipca_atual",
+        "categoria": "macro",
+        "prioridade": "alta",
+        "janela": "atual",
+        "fontes_preferenciais": ["bcb_sgs"],
+        "formato_esperado": ["json"],
+        "justificativa": "Trazer o IPCA oficial mais recente.",
+    },
+    {
+        "item": "ipca_meta",
+        "categoria": "macro",
+        "prioridade": "alta",
+        "janela": "atual",
+        "fontes_preferenciais": ["cmn", "bcb"],
+        "formato_esperado": ["json"],
+        "justificativa": "Trazer a meta oficial de inflacao vigente.",
+    },
+    {
+        "item": "ipca_projecao",
+        "categoria": "macro",
+        "prioridade": "alta",
+        "janela": "ano_corrente",
+        "fontes_preferenciais": ["bcb_focus"],
+        "formato_esperado": ["json"],
+        "justificativa": "Trazer a projecao de mercado para o IPCA.",
+    },
+]
