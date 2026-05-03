@@ -6,6 +6,7 @@ Responsabilidades esperadas:
 - executar a coleta por ticker
 - listar arquivos gerados
 - carregar favoritos
+- atualizar cache diario de commodities (petroleo, ouro e prata)
 - expor operacoes simples para a UI
 
 Exemplo de fluxo:
